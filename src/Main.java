@@ -10,16 +10,20 @@ public class Main
 
         int res = 0;
 
-        if (k < n && k != 0)
+        if (k == 0 || n == 0)
         {
-            res = n / k * t + t;
-            System.out.println(res);
-        } else if (k == 0 | n == 0)
+            res = 0;
+        } else if (k >= n)
         {
-            System.out.println(0);
+            res = t;
         } else
         {
-            System.out.println(t);
+            res = n / k * t;
+            if (n % k != 0)
+            {
+                res += t;
+            }
         }
+        System.out.println(res);
     }
 }
